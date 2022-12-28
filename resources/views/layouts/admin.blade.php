@@ -7,8 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <title>{{isset($title) ? $title : 'Title tidak diatur' }}</title> 
+    <script src="https://kit.fontawesome.com/a284c48079.js" crossorigin="anonymous"></script>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
 
@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
 <body>
+    @include('sweetalert::alert')
     <div id="app">
     <input type="checkbox" id="nav-toggle">
     <div class="sidebar">
@@ -39,7 +40,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('admin/pegawai/pegawai') }}" class="{{ request()->is('admin/pegawai/pegawai')?'active' :'' }}">
+                    <a href="{{ url('admin/pegawai/pegawai') }}" class="{{ request()->is('admin/pegawai/pegawai','admin/pegawai/data_pegawai')?'active' :'' }}">
                         <span class="las la-user-friends"></span>
                         <span>Pegawai</span>
                     </a>
@@ -72,7 +73,29 @@
         </div>
     </div>
     <div class="main-content">
-        @yield('content')
+        <header>
+            <h1>
+                <label for="nav-toggle">
+                    <span class="las la-bars" style="color: black"></span>
+                </label>
+                {{
+        
+                    isset($title) ? $title : 'Title tidak diatur'
+                    
+                    }}
+            </h1>
+            <li class="nav-item dropdown">
+                <a id="navbarDropdown" class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    {{ Auth::user()->name }}
+                </a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('logout') }}">Logout</a>
+                    </div>
+            </li>     
+        </header>
+        <main>
+            @yield('content')
+        </main>
         
     </div>
 </body>

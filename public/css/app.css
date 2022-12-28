@@ -198,7 +198,16 @@ main{
     }
 } */
 
+.offcanvas{
+    height: 100%;
+    width: 70%;
+}
+
 @media only screen and (max-width: 768px){
+    .offcanvas{
+        height: 100%;
+        width: 90%;
+    }
     body{
         background: #ffffff;
     }
@@ -266,5 +275,30 @@ main{
 
     #nav-toggle:checked ~ .main-content{
         margin-left: 0rem;
+    }
+    #no-more-tables body,
+    #no-more-tables tr,
+    #no-more-tables td{
+        display: block;
+    }
+    #no-more-tables thead tr{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    #no-more-tables td{
+        position: relative;
+        padding-left: 50%;
+        border: none;
+        border-bottom: 1px solid #eee;
+    }
+    #no-more-tables td:before{
+        content: attr(data-title);
+        position: absolute;
+        left: 6px;
+        font-weight: bold;
+    }
+    #no-more-tables tr{
+        border-bottom: 1px solid #ccc;
     }
 }
