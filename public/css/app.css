@@ -69,7 +69,7 @@ body{
 
 .sidebar-menu a span:first-child{
     font-size: 1.5;
-    padding-right: 1rem;
+    padding-right: 0rem;
 }
 
 #nav-toggle:checked + .sidebar{

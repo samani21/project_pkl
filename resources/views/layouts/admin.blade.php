@@ -46,13 +46,13 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ url('admin/pasien/pasien') }}" class="{{ request()->is('admin/pasien/pasien')?'active' :'' }}">
+                    <a href="{{ url('admin/pasien/pasien') }}" class="{{ request()->is('admin/pasien/pasien','admin/pasien/tambah_pasien','admin/pasien/daftar')?'active' :'' }}">
                         <span class="las la-users"></span>
                         <span>Pasien</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#" class="">
+                    <a href="{{ url('admin/medis/medis') }}" class="{{ request()->is('admin/medis/medis')?'active' :'' }}">
                         <span class="las la-book-medical"></span>
                         <span>Rekam Medis</span>
                     </a>
