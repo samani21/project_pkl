@@ -41,14 +41,14 @@ Route::get('admin/medis/medis', [BerobatController::class, 'index'])->name('admi
 
 //pegawai
 Route::get('admin/pegawai/tambah_pegawai', [PegawaiController::class, 'create'])->name('admin/pegawai/tambah_pegawai');
-Route::post('admin/pegawai/tambah_pegawai', [PegawaiController::class, 'store'])->name('create.store');
+Route::post('admin/pegawai/tambah_pegawai', [PegawaiController::class, 'store'])->name('pegawai.store');
 Route::get('admin/pegawai/edit_pegawai/{id}',[PegawaiController::class,'editpegawai'])->name('admin/pegawai/edit_pegawai');
 Route::post('updatepegawai/{id}',[PegawaiController::class,'updatepegawai'])->name('updatepegawai');
 Route::get('admin/pegawai/hapus_pegawai/{id}', [PegawaiController::class,'destroy'])->name('hapus_pegawai');
 
 //pasien
 Route::get('admin/pasien/tambah_pasien', [PasienController::class, 'create'])->name('admin/pasien/tambah_pasien');
-Route::post('admin/pasien/tambah_pasien', [PasienController::class, 'store'])->name('create.store');
+Route::post('admin/pasien/tambah_pasien', [PasienController::class, 'store'])->name('pasien.store');
 Route::get('admin/pasien/edit_pasien/{id}',[PasienController::class,'editpasien'])->name('admin/pasien/edit_pasien');
 Route::post('updatepasien/{id}',[PasienController::class,'updatepasien'])->name('updatepasien');
 Route::get('admin/pasien/hapus_pasien/{id}', [PasienController::class,'destroy'])->name('hapus_pasien');
@@ -58,4 +58,5 @@ Route::get('admin/pasien/detail/{id}',[PasienController::class,'detail'])->name(
 
 //rekam medis
 Route::get('admin/medis/periksa/{id}',[MedisController::class,'periksa'])->name('admin/medis/periksa');
-Route::get('admin/medis/rekam_medis/{id}',[MedisController::class,'rekam'])->name('admin/medis/rekam_medis');
+Route::post('admin/medis/periksa/{id}',[MedisController::class,'store'])->name('create.store');
+Route::get('admin/medis/rekam_medis/pasien={id}&rekammedis={pasien_id}',[MedisController::class,'rekam'])->name('admin/medis/rekam_medis');

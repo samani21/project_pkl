@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{ route('create.store')}}" method="POST">
+<form action="{{ route('pasien.store')}}" method="POST">
     @csrf
         <div>
             <label for="">No berobat</label>
@@ -42,7 +42,7 @@
         </div>
         <hr>
         <div>
-            <input type="submit" class="btn btn-success" name="simpan" value="Simpan">
+            <button name="simpan" type="submit" class="btn btn-success">Simpan</button>
             <button class="btn btn-danger" type="reset">Reset</button>
         </div>
   </form>

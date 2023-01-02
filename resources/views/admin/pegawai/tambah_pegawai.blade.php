@@ -2,7 +2,7 @@
 
 @section('content')
 
-<form action="{{ route('create.store') }}" method="POST">
+<form action="{{ route('pegawai.store') }}" method="POST">
     @csrf
         <div>
             <label for="">NIP</label>

@@ -5,7 +5,7 @@
 <form action="{{route('tambah.store',$pasien->id)}}" method="POST" class="row g-2">
     @csrf
        <div class="col-6">
-        <input class="form-control" type="hidden" id="id_pasien" name="id_pasien" value="{{$pasien->id}}"  placeholder="Masukkan no berobat" aria-label="default input example" readonly>
+        <input class="form-control" type="hidden" id="pasien_id" name="pasien_id" value="{{$pasien->id}}"  placeholder="Masukkan no berobat" aria-label="default input example" readonly>
             <div>
                 <label for="">No berobat</label>
                 <input class="form-control" type="number" id="no" name="no" value="{{$pasien->no}}"  placeholder="Masukkan no berobat" aria-label="default input example" readonly>
@@ -74,7 +74,7 @@
             </div>
             <div>
                 <br>
-                <input type="submit" class="btn btn-success" name="simpan" value="Simpan">
+                <button type="submit" class="btn btn-success" name="simpan">Simpan</button>
                 <a href="#" onclick="goBack()" class="btn btn-warning">Batal</a>
                     <script>
                         function goBack() {

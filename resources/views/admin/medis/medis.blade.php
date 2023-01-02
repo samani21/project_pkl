@@ -45,7 +45,7 @@
                       }?></td>
                     <td data-title="Aksi">
                         <?php if($medis->status =='1'){
-                            echo '<a href="rekam_medis/'.$medis->id.'" class="btn btn-success"><i class="fa-solid fa-laptop-medical"></i></a>';
+                            echo '<a href="rekam_medis/pasien='.$medis->id.'&rekammedis='.$medis->pasien_id.'" class="btn btn-success"><i class="fa-solid fa-laptop-medical"></i></a>';
                          }if($medis->status =='0'){
                              echo '<a href="periksa/'.$medis->id.'" class="btn btn-primary"><i class="fa-solid fa-book-medical"></i></a>';
                           }?>

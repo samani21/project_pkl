@@ -27,7 +27,7 @@ class BerobatController extends Controller
     {
 
         $berobat = new Berobat([
-            'id_pasien' => $request->id_pasien,
+            'pasien_id' => $request->pasien_id,
             'no' => $request->no,
             'nik' => $request->nik,
             'jenis' => $request->jenis,
